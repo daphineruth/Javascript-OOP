@@ -14,11 +14,8 @@ const Book2 = {
     title: 'Book Two',
     author : 'Jane Doe',
     year: '2020',
-    getsummary : function() {
-        return `${this.title} was written by ${this.author} in ${this.year} `;
-    }
+    
 }
-
 
 //constructors
 
@@ -27,6 +24,14 @@ class Book {
         this.title = title;
         this.author = author;
         this.year = year;
+    };
+}
+
+//prototype
+
+Book.prototype.getsummary = function() {
+
+        return `${this.title} was written by ${this.author} in ${this.year} `;
     }
 }
 
