@@ -1,3 +1,4 @@
+'use strict';
 
 const Book1 = {
     title: 'Book One',
@@ -19,21 +20,39 @@ const Book2 = {
 
 //constructors
 
-class Book {
-    constructor(title, author, year) {
+function Book (title, author, year) {
         this.title = title;
         this.author = author;
         this.year = year;
-    };
-}
+    }
+
 
 //prototype
 
 Book.prototype.getsummary = function() {
 
         return `${this.title} was written by ${this.author} in ${this.year} `;
-    }
+    };
+//magazine constuctor
+
+function Magazine(title, author, year) {
+    Book.call(this, title, author, year);
+
+    this.month = month;
 }
 
-//intatiate an object
- //const book1 = new Book('Book One', 'John Doe' '2013');
+//inherit prototype
+
+Magazine.prototype =Object.create(Book.prototype);
+
+
+//intatiate Magazine object
+ const mag1 = new Book('Mag One', 'John Doe', '2018', 'Jan');
+
+
+    Magazine.prototype.constructor = Magazine;
+
+ // console.log(mag1);
+
+ 
+
