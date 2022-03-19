@@ -18,21 +18,22 @@ const Book2 = {
     
 }
 
-//constructors
+//constructor converted to a class
 
-function Book (title, author, year) {
+class Book {
+    constructor(title, author, year) {
         this.title = title;
         this.author = author;
         this.year = year;
     }
-
-
-//prototype
-
-Book.prototype.getsummary = function() {
+    //prototype
+    getsummary() {
 
         return `${this.title} was written by ${this.author} in ${this.year} `;
-    };
+    }
+}
+
+
 //magazine constuctor
 
 function Magazine(title, author, year) {
