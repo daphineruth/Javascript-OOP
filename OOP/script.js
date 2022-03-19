@@ -45,5 +45,19 @@ console.log(jonas.__proto__);
 console.log(jonas.__proto__.__proto__);
 console.log(jonas.__proto__.__proto__.__proto__);
 
+//array prototype
+
+const arr = [2, 5, 5, 5, 7, 11, 11]; // new Array === []
+console.log(arr.__proto__);
+console.log(arr.__proto__ === Array.prototype);
+
+console.log(arr.__proto__.__proto__);
+
+Array.prototype.unique = function () {
+  return [...new Set(this)];
+};
+
+console.log(arr.unique());
+
   
   
