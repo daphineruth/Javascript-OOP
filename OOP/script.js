@@ -137,7 +137,7 @@ PersonCl.prototype.greet = function ()
 
   
 
-  // Inheritance Between "Classes"  -:Constructor Functions
+  // Inheritance Between "Classes" :Constructor Functions
 
 
 Person.prototype.calcAge = function () {
@@ -150,6 +150,7 @@ const Student = function (firstName, birthYear, course) {
 };
 
 // Linking prototypes
+
 Student.prototype = Object.create(Person.prototype);
 
 Student.prototype.introduce = function () {
@@ -161,5 +162,39 @@ mike.introduce();
 mike.calcAge();
 
 
-//setting the prototype of Mie to student 
+//setting the prototype of Mike to student 
 Student.prototype.constructor = Student;
+
+// Inheritance Between "Classes": ES6 Classes
+
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  // Instance methods
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.fullName}`);
+  }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name!`);
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+  static hey() {
+    console.log('Hey there ');
+  }
+}
