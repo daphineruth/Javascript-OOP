@@ -139,10 +139,6 @@ PersonCl.prototype.greet = function ()
 
   // Inheritance Between "Classes"  -:Constructor Functions
 
-const Person = function (firstName, birthYear) {
-  this.firstName = firstName; 
-  this.birthYear = birthYear;
-};
 
 Person.prototype.calcAge = function () {
   console.log(2037 - this.birthYear);
@@ -163,4 +159,6 @@ Student.prototype.introduce = function () {
 const mike = new Student('Mike', 2020, 'Computer Science');
 mike.introduce();
 mike.calcAge();
+
+
   
