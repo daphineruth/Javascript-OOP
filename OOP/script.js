@@ -161,4 +161,5 @@ mike.introduce();
 mike.calcAge();
 
 
-  
+//setting the prototype of Mie to student 
+Student.prototype.constructor = Student;
